@@ -7,7 +7,7 @@ class Department {
 	private User\User $user;
 
 	public function __construct() {
-		$this->user = new User\User();
+		$this->user = new User\User(); // @todo fixme
 	}
 }
 ?>
