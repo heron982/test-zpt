@@ -63,3 +63,5 @@ WHERE user.username = 'zpt'
 8) Utilize a API https://ipinfo.io/json via JavaScript para consultar o IP do usuário e exibir na lacuna designada em [./src/index.html](./src/index.html).
 
 9) Crie a classe `CompanyClient`, que é uma `Company` que, além do `id`, tem um número chamado `registration`. A saudação deve exibir o `id` e o `registration`.
+
+10) Qual commit introduziu [este erro](./src/Department.php#L10)? Explique e corrija o erro.
