@@ -52,8 +52,9 @@ CREATE TABLE `user_department` (
 5) O que pode ser feito para deixar a query abaixo mais rápida?
 
 ```sql
-SELECT department.id FROM user
-INNER JOIN user_department department ON department.user = user.id
+SELECT dept.id FROM user
+INNER JOIN user_department u_d ON u_d.user = user.id
+INNER JOIN department dept ON u_d.department = dept.id
 WHERE user.username = 'zpt'
 ```
 
