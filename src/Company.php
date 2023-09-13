@@ -2,7 +2,11 @@
 namespace Company;
 
 class Company {
-	// code omitted
+	private int $id;
+
+	public function greetings() {
+		return "Greetings. Your ID is $this->id";
+	}
 }
 
 ?>

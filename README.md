@@ -4,12 +4,10 @@ Obrigado por dedicar seu tempo à avaliação da ZPT Digital!
 
 O intuito deste teste é termos uma amostra do seu trabalho nos mais diferentes níveis. Faça-o como se você já tivesse sido contratado pela ZPT Digital e estas fossem suas primeiras tarefas nos nossos repositórios. Use esta avaliação para mostrar o melhor de si!
 
-Fique à vontade para implementar melhorias quaisquer no código-fonte e no banco de dados, mesmo que não sejam solicitadas em nenhuma questão.
-
 ## Questões
 Faça as questões em ordem.
 
-Algumas delas podem parecer enigmáticas e pouco detalhadas. Isso é intencional.
+Algumas questões podem parecer enigmáticas e pouco detalhadas. Isso é intencional.
 
 Crie uma branch para cada questão e mescle para a `master`.
 
@@ -62,6 +60,6 @@ WHERE user.username = 'zpt'
 
 7) [Esta função](./src/Utils.php#L4) permite atribuir uma conexão em estilo procedural. Faça a função aceitar instâncias de `Company` e `Department` também.
 
-8) Utilize a API https://ipinfo.io/json via JavaScript para consultar o IP do usuário e exibir no local designado em [./src/index.html](./src/index.html).
+8) Utilize a API https://ipinfo.io/json via JavaScript para consultar o IP do usuário e exibir na lacuna designada em [./src/index.html](./src/index.html).
 
-9) 
+9) Crie a classe `CompanyClient`, que é uma `Company` que, além do `id`, tem um número chamado `registration`. A saudação deve exibir o `id` e o `registration`.
