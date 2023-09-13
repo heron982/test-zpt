@@ -1,9 +1,13 @@
 <?php
 namespace Department;
 
+require_once './User.php';
+
 class Department {
-	// code omitted
+	private User\User $user;
+
+	public function __construct() {
+		$this->user = new User\User();
+	}
 }
-
-
 ?>
