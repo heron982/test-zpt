@@ -24,18 +24,18 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `dept` (
+CREATE TABLE `department` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `employees` int unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `user_dept` (
+CREATE TABLE `user_department` (
   `user` int unsigned NOT NULL,
-  `dept` int unsigned NOT NULL,
-  PRIMARY KEY (`user`,`dept`),
-  CONSTRAINT `FK_dept` FOREIGN KEY (`dept`) REFERENCES `dept` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  `department` int unsigned NOT NULL,
+  PRIMARY KEY (`user`,`department`),
+  CONSTRAINT `FK_department` FOREIGN KEY (`department`) REFERENCES `department` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_user` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB;
 ```
@@ -52,11 +52,11 @@ CREATE TABLE `user_dept` (
 5) O que pode ser feito para deixar a query abaixo mais rápida?
 
 ```sql
-SELECT depto.id FROM user
-INNER JOIN user_depto depto ON depto.user = user.id
+SELECT department.id FROM user
+INNER JOIN user_department department ON department.user = user.id
 WHERE user.username = 'zpt'
 ```
 
-6) A classe `User` tem o método `setDb()` que recebe uma conexão com o banco de dados. As classes `Company` e `Dept` precisam ter esse mesmo método, idêntico. Implemente.
+6) A classe `User` tem o método `setDb()` que recebe uma conexão com o banco de dados. As classes `Company` e `Department` precisam ter esse mesmo método, idêntico. Implemente.
 
-7) [Esta função](./src/Utils.php#L4) permite atribuir uma conexão em estilo procedural. Faça a função aceitar instâncias de `Company` e `Dept` também.
+7) [Esta função](./src/Utils.php#L4) permite atribuir uma conexão em estilo procedural. Faça a função aceitar instâncias de `Company` e `Department` também.
