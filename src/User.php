@@ -14,6 +14,13 @@ class User {
 		return $users;
 	}
 
+	public function getBiggerEmployessDepartment() 
+	{
+		$department = $this->db->q("SELECT COUNT(user) as total_users, department FROM user_department GROUP BY department ORDER BY total_users DESC LIMIT 1");
+
+		return $department->row;
+	}
+
 	public function setDb($db) {
 		if (!$db || $db->isClosed()) {
 			return false;
