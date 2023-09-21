@@ -56,6 +56,15 @@ INNER JOIN department dept ON u_d.department = dept.id
 WHERE user.username = 'zpt'
 ```
 
+R: Utilizando índices para os presentes campos, para que os joins e where performem mais, exemplo: 
+
+```sql
+CREATE INDEX ind_username ON user (username);
+CREATE INDEX ind_user_id ON user_department (user);
+CREATE INDEX ind_department_id ON user_department (department);
+CREATE INDEX ind_department_id ON department (id);
+```
+
 6) A classe `User` tem o método `setDb()` que recebe uma conexão com o banco de dados. As classes `Company` e `Department` precisam ter esse mesmo método, idêntico. Implemente.
 
 7) [Esta função](./src/Utils.php#L4) permite atribuir uma conexão em estilo procedural. Faça a função aceitar instâncias de `Company` e `Department` também.
