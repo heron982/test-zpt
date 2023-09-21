@@ -6,6 +6,22 @@
 	<title>My IP</title>
 </head>
 <body>
-	<p>My IP is <span id="ip"/></p>
+	<p>My IP is <span id="ip"></p>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://ipinfo.io/json";
+
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var data = JSON.parse(this.responseText);
+					console.log(data);
+					document.getElementById("ip").innerHTML= data.ip;
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+		});
+	</script>
 </body>
 </html>
