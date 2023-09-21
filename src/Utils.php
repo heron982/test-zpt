@@ -1,8 +1,11 @@
 <?php
+
+use DatabaseInterface\DatabaseInterface;
+
 require_once './User.php';
 
-function setDb(User\User $user, $db) {
-	$user->setDb($db);
+function setDb(DatabaseInterface $obj, $db) {
+	$obj->setDb($db);
 }
 
 ?>
